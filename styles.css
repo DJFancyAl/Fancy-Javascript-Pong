@@ -1,4 +1,87 @@
+:root {
+    --blue: #3245BF;
+    --darkPurple: #9A5BFF;
+    --lightPurple: #E67BF7;
+    --sand: #F9E3BD;
+  }
+
 body {
     font-family: 'Orbitron', sans-serif;
+    margin: 0;
     line-height: 16px;
+    background-color: #3245BF;
+}
+
+header{
+    padding: 0 0.5rem 0.5rem 0.5rem;
+    color: var(--lightPurple);
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    border-bottom: 3px ridge var(--lightPurple);
+}
+
+header h1{
+    align-self: center;
+}
+
+.control {
+    background-color: #9A5BFF;
+    text-align: center;
+    border-radius: 0  0 0.5rem 0.5rem;
+    color: var(--blue);
+    font-weight: bold;
+    padding: 1rem;
+}
+
+.score-tab {
+    background-color: var(--sand);
+    display: inline-block;
+    padding: 1rem;
+    margin: 0.5rem;
+    width:100px;
+    border-radius: 0.5rem;
+    border: 2px solid var(--blue);
+}
+
+.scores {
+    font-size: 1.5rem;
+}
+
+.score {
+    padding: 0.5rem;
+}
+#mode-buttons{
+    background-color: var(--sand);
+    padding: 0.5rem;
+    margin:0.5rem;
+    border: 2px solid var(--blue);
+    border-radius: 0.5rem;
+}
+#two-player{
+    margin-left: 1.5rem;
+}
+
+#reset {
+    width:40%;
+    padding: 0.5rem;
+    color: var(--blue);
+    font-family: 'Orbitron', sans-serif;
+    font-weight: bold;
+    background-color: var(--sand);
+    border: 2px solid var(--blue);
+    border-radius: 0.5rem;
+}
+
+.container {
+    width: 100%;
+    text-align: center;
+}
+
+canvas {
+    margin: 5%;
+    width: 1200px;
+    height: 90%;
+    background-color: var(--darkPurple);
+    border: 5px ridge var(--lightPurple)
 }

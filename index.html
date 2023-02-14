@@ -8,11 +8,29 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./styles.css">
 </head>
 <body>
-    <div id="menu">
-        <input type="radio" name="player-count" value="1">
-        <input type="radio" name="player-count" value="2">
+    <header>
+        <h1>Fancy Javascript Pong</h1>
+        <div class="control">
+            Scores<br>
+            <div class="score-tab"><div class="scores"><span class="score">0</span>-<span class="score">0</span></div><br>Game</div>
+            <div class="score-tab"><div class="scores"><span class="score">0</span>-<span class="score">0</span></div><br>Matches</div>
+        </div>
+        <div class="control">Controls<br>
+            <div id="mode-buttons">
+                <input id="one-player" type="radio" name="mode" value="1">
+                <label for="one-player">One Player</label>
+                <input id="two-player" type="radio" name="mode" value="2">
+                <label for="two-player">Two Player</label>
+            </div>
+            <button id="reset">Reset</button>
+        </div>
+    </header>
+
+    <div class="container">
+        <canvas></canvas>
     </div>
 </body>
 </html>
