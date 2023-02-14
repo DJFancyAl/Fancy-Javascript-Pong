@@ -20,14 +20,45 @@ I want to make a dynamic game with a lot of motion - where the player has to be 
 
 ## Game Logic
 
-```
 Replace this text with pseudocode.
 The pseudocode should describe in plain, simple language the logic of the game.
 Describe the logic involved in player decisions.
-  - What are the choices available to the player?
-  - What happens when the player makes a choice?
-Describe the logic that evaluates the player's victory/loss/progress status.
-```
+
+- What are the choices available to the player?
+- What happens when the player makes a choice?
+  Describe the logic that evaluates the player's victory/loss/progress status.
+
+Create the user interface. It must include:
+
+1. Selection menu at the top with a title, user options, and scores.
+2. A <canvas> element where the game will actually be played.
+3. Possibly a background image that spreads the whole page.
+
+Create the canvas elements:
+
+1. Player 1 paddle
+2. Player 2 paddle
+3. The ball
+
+Create the gameplay. When the user hits the "Up" or "Down" arrow key the game will begin:
+
+1. The ball will move at an angle towards Player 2's side.
+2. User 2's paddle (either computer or human player) can move up and down to get in position for the ball.
+3. If there's an object collision then the ball will bounce at an angle back towards user 1. If there is no collison then the ball will exit the screen and User 1 will score a point.
+4. If the ball returns then User 1 will try to collide with the ball.
+5. The first player to score 5 points wins the match.
+
+Allow toggling between 1 Player and 2 Player modes:
+
+1. In one player mode the user will face the computer's paddle. The computer will be tough to beat so I need to create a way for it to lose once in a while.
+2. In two player mode - player1 will use the "W" and "S" keys to move their paddle up and down. Player 2 will use the "Up" and "Down" arrow keys(I'm not actually sure this is possible, but I'll try.)
+
+Track the scores:
+
+1. There will be two scoreboards at the top of the screen - one for the game score and one for the match score.
+2. The game score will update when a point is scored.
+3. The match score will update when a game is won.
+4. The match score will be saved and loaded from localstorage until the user clicks the "reset" button or toggles player modes.
 
 ## Deliverables
 
