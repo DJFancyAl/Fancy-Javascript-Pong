@@ -20,14 +20,6 @@ I want to make a dynamic game with a lot of motion - where the player has to be 
 
 ## Game Logic
 
-Replace this text with pseudocode.
-The pseudocode should describe in plain, simple language the logic of the game.
-Describe the logic involved in player decisions.
-
-- What are the choices available to the player?
-- What happens when the player makes a choice?
-  Describe the logic that evaluates the player's victory/loss/progress status.
-
 Create the user interface. It must include:
 
 1. Selection menu at the top with a title, user options, and scores.

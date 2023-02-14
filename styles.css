@@ -78,6 +78,10 @@ header h1{
     text-align: center;
 }
 
+input[type="radio"]{
+    accent-color: var(--lightPurple);
+}
+
 canvas {
     margin: 5%;
     width: 1200px;
