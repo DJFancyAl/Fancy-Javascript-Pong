@@ -54,25 +54,20 @@ Track the scores:
 
 ## Deliverables
 
-> Even if you have a great big idea for a game, it's important to scope this project according to what you can get done in the next two weeks. We'll refer to your project completion goal using the term **[Minimum Viable Product](https://en.wikipedia.org/wiki/Minimum_viable_product) (MVP)** -- a list of the criteria needed to "ship" a playable version of your game that meets the project requirements.
->
-> _Don't lose sight of your big ideas, though! Keep a list of further improvements you can refer to as **Post-MVP Ideas**. You might finish some before our project time is done, or you might work on them later!_
->
-> For your README, delete this blockquote and fill in the lists below.
-
 ### MVP Criteria
 
-- Your game must be winnable and clearly shows there’s a winner.
-- You must provide clear, easily accessible instructions on how to play the game.
-- Another thing my game must do to meet my minimum standard.
-- One more thing.
-- Etc.
+- The game will be playable by 1 or 2 players.
+- The game will keep score, and the first player to reach 5 points will win the match.
+- The game will notify players when a point is scored and when a match is won.
+- The code will be well organized in different files. Variables and functions will be organized with encapsulation.
+- Instructions will be included within the game and in the readme file.
+- Code syntax will be well commented and very readable.
 
 ### Post-MVP Plans
 
-- One great idea I hope to be able to add in before the project deadline.
-- Another that will be a stretch.
-- Something else I don't technically know how to do... _yet_. :)
+- The game will play sounds when points are scored and matches are won.
+- The match scores will be saved and retreived from localstorage.
+- Ball movement will be more dynamic - maybe showing "squashing animations" and more random behavior.
 
 ## Project Planning
 
