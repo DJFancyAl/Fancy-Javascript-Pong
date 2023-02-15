@@ -84,8 +84,6 @@ input[type="radio"]{
 
 canvas {
     margin: 5%;
-    width: 1200px;
-    height: 90%;
-    background-color: var(--darkPurple);
+    /* background-color: var(--darkPurple); */
     border: 5px ridge var(--lightPurple)
 }

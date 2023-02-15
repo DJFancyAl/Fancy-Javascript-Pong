@@ -12,12 +12,14 @@
 </head>
 <body>
     <header>
-        <h1>Fancy Javascript Pong</h1>
         <div class="control">
             Scores<br>
             <div class="score-tab"><div class="scores"><span class="score">0</span>-<span class="score">0</span></div><br>Game</div>
             <div class="score-tab"><div class="scores"><span class="score">0</span>-<span class="score">0</span></div><br>Matches</div>
         </div>
+
+        <h1>Fancy Javascript Pong</h1>
+
         <div class="control">Controls<br>
             <div id="mode-buttons">
                 <input id="one-player" type="radio" name="mode" value="1" checked>
@@ -30,10 +32,11 @@
     </header>
 
     <div class="container">
-        <canvas></canvas>
+        <canvas width="1200" height="600">Your browser does not support the HTML5 canvas tag.</canvas>
     </div>
 
     <script src="./gameboard.js"></script>
+    <script src="./ball.js"></script>
     <script src="./index.js"></script>
 </body>
 </html>
