@@ -1,24 +1,22 @@
 let game = {
-    render: function(){
-        ball.start()
-    },
-    start: function(){
+    setup: function(){
+        cancelAnimationFrame(game.start)
+        console.log('test')
         gameboard.clear()
+        ball.setup()
+    },
+    start: function(e){
+        if(e.repeat) return;
 
-        ball.x += ball.speed
-        ball.y += ball.dy
-
-        if(ball.y - ball.d < 0){
-            ball.dy *= -1;
-        }
-
-        if(ball.y + ball.d > gameboard.board.height){
-            ball.dy *= -1;
-        }
+        gameboard.clear()
         
+        ball.move()
         ball.create()
         player1.move()
         player1.create()
+        player2.move()
+        player2.create()
+        
         requestAnimationFrame(game.start);
     }
 }

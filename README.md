@@ -78,9 +78,9 @@ Track the scores:
 
 | Date      | Goals                                                                    |
 | --------- | ------------------------------------------------------------------------ |
-| Mon. 7/11 | Create GitHub repository. Complete README.md.                            |
-| Wed. 7/13 |                                                                          |
-| Sat. 7/16 |                                                                          |
-| Mon. 7/18 |                                                                          |
-| Wed. 7/20 |                                                                          |
-| Sat. 7/23 | Deploy to GitHub Pages. Submit completed project. Project presentations. |
+| Mon. 2/13 | Create GitHub repository. Complete README.md.                            |
+| Wed. 2/15 | Have "pong" functionality working with object colision.                  |
+| Sat. 2/18 | Have computer opponent moving on own and a "reset" button working.       |
+| Mon. 2/20 | Be able to toggle between 1 and 2 players, and have background change.   |
+| Wed. 2/22 | Have match scores save in localstorage, troubleshoot, improve styling.   |
+| Sat. 2/25 | Deploy to GitHub Pages. Submit completed project. Project presentations. |

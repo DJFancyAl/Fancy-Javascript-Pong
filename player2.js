@@ -1,7 +1,7 @@
-let player1 = {
+let player2 = {
     w: 10,
     l: 120,
-    x: 20,
+    x: gameboard.board.width - 20,
     y: (gameboard.board.height/2) + 60,
     s: 6,
     ctx: gameboard.ctx,
@@ -25,17 +25,16 @@ let player1 = {
     }
 }
 
-player1.create()
+player2.create()
 window.addEventListener('keydown', (e) => {
     if(e.key == "ArrowUp"){
-        player1.direction = "up"
+        player2.direction = "up"
     }
     if(e.key == "ArrowDown"){
-        player1.direction = "down"
+        player2.direction = "down"
     }
 })
 
 window.addEventListener('keyup', () => {
-    console.log('up')
-    player1.direction = null
+    player2.direction = null
 })

@@ -1,10 +1,9 @@
 let ball = {
-    x: gameboard.board.width/2,
-    y: gameboard.board.height/2,
+    x: 0,
+    y: 0,
     d: 15,
     dy: 0,
     speed: 5,
-    // ctx: gameboard.board.getContext('2d'),
     ctx: gameboard.ctx,
     create: function(){
         let grd = this.ctx.createRadialGradient(this.x, this.y, this.d, this.x, this.y, 6);
@@ -16,28 +15,28 @@ let ball = {
         this.ctx.fill()
     },
     setup: function(){
+        this.x = gameboard.board.width/2
+        this.y = gameboard.board.height/2,
         this.dy = Math.floor(Math.random() * 8) + 1;
         this.dy = Math.floor(Math.random() * 2) == 1 ? this.dy *1 : this.dy*-1;
     },
-    start: function(){
-        gameboard.clear()
+    move: function(){
+        this.x += this.speed
+        this.y += this.dy
 
-        ball.x += ball.speed
-        ball.y += ball.dy
-
-        if(ball.y - ball.d < 0){
-            ball.dy *= -1;
+        if(this.y - this.d < 0){
+            this.dy *= -1;
         }
 
-        if(ball.y + ball.d > gameboard.board.height){
-            ball.dy *= -1;
+        if(this.y + this.d > gameboard.board.height){
+            this.dy *= -1;
         }
-        
-        ball.create()
-        requestAnimationFrame(ball.start);
+
+        if(this.x > player2.x || this.x < player1.x){
+            this.speed *= -1;
+        }
     }
 }
 
-ball.create()
 ball.setup()
-
+ball.create()
