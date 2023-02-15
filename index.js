@@ -1,3 +1,3 @@
 let button = document.querySelector('button')
 
-button.addEventListener('click', ball.start)
+button.addEventListener('click', game.start)
