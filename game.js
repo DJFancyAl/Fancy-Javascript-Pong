@@ -1,12 +1,19 @@
 let game = {
+    started: false,
+    set: false,
+    ctx: gameboard.ctx,
     setup: function(){
-        cancelAnimationFrame(game.start)
-        console.log('test')
+        this.started = false
         gameboard.clear()
         ball.setup()
+        player1.setUp()
+        player2.setUp()
+        this.stop = false
+        this.set = true
     },
     start: function(){
         requestID = requestAnimationFrame(game.start);
+        game.started = true
         gameboard.clear()
         
         ball.move()
@@ -18,7 +25,17 @@ let game = {
         
         if(game.stop){
             cancelAnimationFrame(requestID);
+            game.set = false
+            game.started = false
         }
     },
-    stop: false
+    stop: false,
+    endMatch: function(player){
+        this.ctx.font = "bolder 60px Arial";
+        this.ctx.fillStyle = "#E67BF7";
+        this.ctx.textAlign = "center";
+        this.ctx.fillText("PLAYER " + player , gameboard.board.width/2, (gameboard.board.height/2) - 60)
+        this.ctx.font = "bolder 60px Arial";
+        this.ctx.fillText("wins the match!", gameboard.board.width/2, (gameboard.board.height/2) + 30)
+    }
 }

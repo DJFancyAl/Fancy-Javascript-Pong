@@ -1,9 +1,9 @@
 let player1 = {
-    w: 10,
-    l: 120,
-    x: 20,
-    y: (gameboard.board.height/2) + 60,
-    s: 6,
+    w: 0,
+    l: 0,
+    x: 0,
+    y: 0,
+    s: 0,
     ctx: gameboard.ctx,
     create: function(){
         this.ctx.beginPath();
@@ -27,16 +27,36 @@ let player1 = {
     score: function(){
         this.currentScore += 1
         gameboard.scores[0].textContent = this.currentScore
+        
+        if(this.currentScore == 5){
+            game.endMatch(1)
+            return
+        }
+        
+        this.ctx.font = "bolder 60px Arial";
+        this.ctx.fillStyle = "#E67BF7;";
+        this.ctx.textAlign = "center";
+        this.ctx.fillText("PLAYER 1 SCORES!", gameboard.board.width/2, (gameboard.board.height/2) - 60)
+        this.ctx.font = "bolder 50px Arial";
+        this.ctx.fillText(player1.currentScore + " - " + player2.currentScore, gameboard.board.width/2, (gameboard.board.height/2) + 30)
+    },
+    setUp: function(){
+        this.w = 10,
+        this.l = 120,
+        this.x = 20,
+        this.y = (gameboard.board.height/2) + 60,
+        this.s = 6,
+
+        this.create()
     }
 }
 
 
-player1.create()
 window.addEventListener('keydown', (e) => {
-    if(e.key == "ArrowUp"){
+    if(e.key == "w"){
         player1.direction = "up"
     }
-    if(e.key == "ArrowDown"){
+    if(e.key == "s"){
         player1.direction = "down"
     }
 })
