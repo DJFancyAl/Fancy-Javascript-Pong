@@ -24,12 +24,15 @@ let player1 = {
         }
     },
     currentScore: 0,
+    matchScore: 0,
     score: function(){
         this.currentScore += 1
         gameboard.scores[0].textContent = this.currentScore
         
         if(this.currentScore == 5){
             game.endMatch(1)
+            this.matchScore += 1
+            gameboard.scores[2].textContent = this.matchScore
             return
         }
         

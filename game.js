@@ -37,5 +37,9 @@ let game = {
         this.ctx.fillText("PLAYER " + player , gameboard.board.width/2, (gameboard.board.height/2) - 60)
         this.ctx.font = "bolder 60px Arial";
         this.ctx.fillText("wins the match!", gameboard.board.width/2, (gameboard.board.height/2) + 30)
+        player1.currentScore = 0
+        player2.currentScore = 0
+        gameboard.scores[0].textContent = 0
+        gameboard.scores[1].textContent = 0
     }
 }
