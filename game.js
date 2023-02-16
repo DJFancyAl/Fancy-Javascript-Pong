@@ -5,9 +5,8 @@ let game = {
         gameboard.clear()
         ball.setup()
     },
-    start: function(e){
-        if(e.repeat) return;
-
+    start: function(){
+        requestID = requestAnimationFrame(game.start);
         gameboard.clear()
         
         ball.move()
@@ -17,6 +16,9 @@ let game = {
         player2.move()
         player2.create()
         
-        requestAnimationFrame(game.start);
-    }
+        if(game.stop){
+            cancelAnimationFrame(requestID);
+        }
+    },
+    stop: false
 }

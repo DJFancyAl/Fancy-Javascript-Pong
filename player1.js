@@ -22,8 +22,14 @@ let player1 = {
         if(this.direction  == 'down' && this.y < (gameboard.board.height - this.w - 5)){
             this.y += this.s;
         }
+    },
+    currentScore: 0,
+    score: function(){
+        this.currentScore += 1
+        gameboard.scores[0].textContent = this.currentScore
     }
 }
+
 
 player1.create()
 window.addEventListener('keydown', (e) => {

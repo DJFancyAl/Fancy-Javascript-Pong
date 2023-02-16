@@ -22,6 +22,11 @@ let player2 = {
         if(this.direction  == 'down' && this.y < (gameboard.board.height - this.w - 5)){
             this.y += this.s;
         }
+    },
+    currentScore: 0,
+    score: function(){
+        this.currentScore += 1
+        gameboard.scores[1].textContent = this.currentScore
     }
 }
 

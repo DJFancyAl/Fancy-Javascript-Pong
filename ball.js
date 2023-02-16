@@ -3,7 +3,7 @@ let ball = {
     y: 0,
     d: 15,
     dy: 0,
-    speed: 5,
+    speed: 8,
     ctx: gameboard.ctx,
     create: function(){
         let grd = this.ctx.createRadialGradient(this.x, this.y, this.d, this.x, this.y, 6);
@@ -32,8 +32,22 @@ let ball = {
             this.dy *= -1;
         }
 
-        if(this.x > player2.x || this.x < player1.x){
+        if(this.x < player1.x + player1.w + (this.d/2) && this.y < player1.y + 25 && this.y  > (player1.y-player1.l-25)){
             this.speed *= -1;
+        }
+
+        if(this.x > player2.x - player2.w - (this.d/2) &&  this.y < player2.y + 25 && this.y  > (player2.y-player2.l-25)){
+            this.speed *= -1;
+        }
+
+        if(this.x > gameboard.board.width){
+            game.stop = true
+            player1.score()
+        }
+
+        if(this.x < 0){
+            game.stop = true
+            player2.score()
         }
     }
 }
