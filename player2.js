@@ -3,7 +3,7 @@ let player2 = {
     l: 120,
     x: gameboard.board.width - 20,
     y: (gameboard.board.height/2) + 60,
-    s: 6,
+    s: 1,
     ctx: gameboard.ctx,
     create: function(){
         this.ctx.beginPath();
@@ -16,6 +16,14 @@ let player2 = {
     },
     direction: null,
     move: function(){
+        if(game.mode == 1){
+            if(this.y > ball.y + 30){
+                this.direction = 'up'
+            } else if(this.y < ball.y - 30) {
+                this.direction = 'down'
+            }
+        }
+
         if(this.direction  == 'up' && this.y > (this.l + this.w + 5)){
             this.y -= this.s;
         }
@@ -55,10 +63,10 @@ let player2 = {
 }
 
 window.addEventListener('keydown', (e) => {
-    if(e.key == "ArrowUp"){
+    if(game.mode == 2 && e.key == "ArrowUp"){
         player2.direction = "up"
     }
-    if(e.key == "ArrowDown"){
+    if(game.mode == 2 && e.key == "ArrowDown"){
         player2.direction = "down"
     }
 })

@@ -41,5 +41,26 @@ let game = {
         player2.currentScore = 0
         gameboard.scores[0].textContent = 0
         gameboard.scores[1].textContent = 0
+    },
+    mode: 1,
+    setMode: function(){
+        for(let i=0; i < gameboard.modes.length; i++){
+            if(gameboard.modes[i].checked){
+                game.mode = gameboard.modes[i].value
+                game.reset()
+            }
+        }
+    },
+    reset: function(){
+        player1.currentScore = 0
+        player2.currentScore = 0
+        gameboard.resetScores()
+        game.setup()
     }
 }
+
+for(let i=0; i < gameboard.modes.length; i++){
+    gameboard.modes[i].addEventListener('click', game.setMode)
+}
+
+game.setMode()

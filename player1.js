@@ -56,10 +56,16 @@ let player1 = {
 
 
 window.addEventListener('keydown', (e) => {
-    if(e.key == "w"){
+    if(game.mode == 2 && e.key == "w"){
         player1.direction = "up"
     }
-    if(e.key == "s"){
+    if(game.mode == 2 && e.key == "s"){
+        player1.direction = "down"
+    }
+    if(game.mode == 1 && e.key == "ArrowUp"){
+        player1.direction = "up"
+    }
+    if(game.mode == 1 && e.key == "ArrowDown"){
         player1.direction = "down"
     }
 })

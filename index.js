@@ -4,7 +4,7 @@ window.onload = () => {
 
 let button = document.querySelector('button')
 
-button.addEventListener('click', game.start)
+button.addEventListener('click', game.reset)
 window.addEventListener('keyup', e => {
     if(game.started){
         return
