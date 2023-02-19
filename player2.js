@@ -1,9 +1,9 @@
 let player2 = {
-    w: 10,
-    l: 120,
-    x: gameboard.board.width - 20,
-    y: (gameboard.board.height/2) + 60,
-    s: 1,
+    w: 0,
+    l: 0,
+    x: 0,
+    y: 0,
+    s: 0,
     ctx: gameboard.ctx,
     create: function(){
         this.ctx.beginPath();
@@ -17,9 +17,9 @@ let player2 = {
     direction: null,
     move: function(){
         if(game.mode == 1){
-            if(this.y > ball.y + 30){
+            if(this.y > ball.y + 80){
                 this.direction = 'up'
-            } else if(this.y < ball.y - 30) {
+            } else if(this.y < ball.y - 80) {
                 this.direction = 'down'
             }
         }
@@ -37,9 +37,13 @@ let player2 = {
         this.currentScore += 1
         gameboard.scores[1].textContent = this.currentScore
 
+        if(this.currentScore > player1.currentScore){
+            ball.speed -= 3
+        }
+
         if(this.currentScore == 5){
-            game.endMatch(2)
             this.matchScore += 1
+            game.endMatch(2)
             gameboard.scores[3].textContent = this.matchScore
             return
         }
@@ -56,7 +60,7 @@ let player2 = {
         this.l = 120,
         this.x = gameboard.board.width - 20,
         this.y = (gameboard.board.height/2) + 60,
-        this.s = 6,
+        this.s = 10,
 
         this.create()
     }

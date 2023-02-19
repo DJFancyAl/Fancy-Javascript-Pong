@@ -5,6 +5,7 @@ let game = {
     setup: function(){
         this.started = false
         gameboard.clear()
+        gameboard.setBackground()
         ball.setup()
         player1.setUp()
         player2.setUp()
@@ -31,6 +32,7 @@ let game = {
     },
     stop: false,
     endMatch: function(player){
+        gameboard.victory.play()
         this.ctx.font = "bolder 60px Arial";
         this.ctx.fillStyle = "#E67BF7";
         this.ctx.textAlign = "center";
@@ -41,6 +43,8 @@ let game = {
         player2.currentScore = 0
         gameboard.scores[0].textContent = 0
         gameboard.scores[1].textContent = 0
+        gameboard.saveScores()
+        ball.speed = 12
     },
     mode: 1,
     setMode: function(){
@@ -48,14 +52,19 @@ let game = {
             if(gameboard.modes[i].checked){
                 game.mode = gameboard.modes[i].value
                 game.reset()
+                ball.s = 12
             }
         }
     },
     reset: function(){
         player1.currentScore = 0
         player2.currentScore = 0
+        player1.matchScore = 0
+        player2.matchScore = 0
         gameboard.resetScores()
+        gameboard.saveScores()
         game.setup()
+        ball.s = 12
     }
 }
 
@@ -63,4 +72,4 @@ for(let i=0; i < gameboard.modes.length; i++){
     gameboard.modes[i].addEventListener('click', game.setMode)
 }
 
-game.setMode()
+// game.setMode()

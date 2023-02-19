@@ -28,10 +28,14 @@ let player1 = {
     score: function(){
         this.currentScore += 1
         gameboard.scores[0].textContent = this.currentScore
+
+        if(this.currentScore > player2.currentScore){
+            ball.speed += 3
+        }
         
         if(this.currentScore == 5){
-            game.endMatch(1)
             this.matchScore += 1
+            game.endMatch(1)
             gameboard.scores[2].textContent = this.matchScore
             return
         }
@@ -48,7 +52,7 @@ let player1 = {
         this.l = 120,
         this.x = 20,
         this.y = (gameboard.board.height/2) + 60,
-        this.s = 6,
+        this.s = 10,
 
         this.create()
     }

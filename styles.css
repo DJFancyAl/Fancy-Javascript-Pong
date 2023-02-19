@@ -76,7 +76,10 @@ header h1{
 
 .container {
     width: 100%;
+    height: calc(100vh - 159px);
     text-align: center;
+    background-size: cover;
+    
 }
 
 input[type="radio"]{
@@ -86,5 +89,7 @@ input[type="radio"]{
 
 canvas {
     margin: 2%;
-    border: 5px ridge var(--lightPurple)
+    border: 5px ridge var(--lightPurple);
+    background-color: var(--blue);
+    cursor: none;
 }

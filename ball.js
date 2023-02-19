@@ -31,27 +31,33 @@ let ball = {
 
         if(this.y - this.d < 0){
             this.dy *= -1;
+            gameboard.wall.play()
         }
 
         if(this.y + this.d > gameboard.board.height){
             this.dy *= -1;
+            gameboard.wall.play()
         }
 
         if(this.x < player1.x + player1.w + this.d && this.y < player1.y + 25 && this.y  > (player1.y-player1.l-25)){
             this.speed *= -1;
+            gameboard.bounce.play()
         }
 
         if(this.x > player2.x - player2.w - this.d &&  this.y < player2.y + 25 && this.y  > (player2.y-player2.l-25)){
             this.speed *= -1;
+            gameboard.bounce.play()
         }
 
         if(this.x > gameboard.board.width){
             game.stop = true
+            gameboard.point.play()
             player1.score()
         }
 
         if(this.x < 0){
             game.stop = true
+            gameboard.point.play()
             player2.score()
         }
     }
