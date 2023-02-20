@@ -1,5 +1,6 @@
 :root {
     --blue: #3245BF;
+    --blue-trans: rgba(50, 69, 191, 0.7);
     --darkPurple: #9A5BFF;
     --lightPurple: #E67BF7;
     --sand: #F9E3BD;
@@ -9,7 +10,7 @@ body {
     font-family: 'Orbitron', sans-serif;
     margin: 0;
     line-height: 16px;
-    background-color: #3245BF;
+    background-color: var(--blue);
 }
 
 header{
@@ -90,6 +91,6 @@ input[type="radio"]{
 canvas {
     margin: 2%;
     border: 5px ridge var(--lightPurple);
-    background-color: var(--blue);
+    background-color: var(--blue-trans);
     cursor: none;
 }

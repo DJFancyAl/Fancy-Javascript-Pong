@@ -3,7 +3,7 @@ let ball = {
     y: 0, // The y Location of the center of the ball
     d: 15, // The diameter of the ball
     dy: 0, // The y speed of the ball
-    speed: 12, // The x speed of the ball (game speed)
+    speed: 1, // The x speed of the ball (game speed)
     ctx: gameboard.ctx,
     create: function(){
         // Draws the ball into the canvas
@@ -14,13 +14,6 @@ let ball = {
         this.ctx.arc(this.x, this.y, this.d, 0, 2 * Math.PI);
         this.ctx.fillStyle = grd;
         this.ctx.fill()
-
-        // this.ctx.moveTo(0, player2.y -player2.l);
-        // this.ctx.lineTo(gameboard.board.width, player2.y - player2.l);
-
-        // this.ctx.moveTo(0, this.y);
-        // this.ctx.lineTo(gameboard.board.width, this.y);
-        // this.ctx.stroke();
     },
     setup: function(){
         // Sets the ball to start position and sets the starting "y" speed which creates the ball angle
