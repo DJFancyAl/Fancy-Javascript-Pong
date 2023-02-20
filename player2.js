@@ -17,7 +17,7 @@ let player2 = {
     direction: null,
     move: function(){
         if(game.mode == 1){
-            if(this.y > ball.y + 80){
+            if(this.y > ball.y + 50){
                 this.direction = 'up'
             } else if(this.y < ball.y - 80) {
                 this.direction = 'down'

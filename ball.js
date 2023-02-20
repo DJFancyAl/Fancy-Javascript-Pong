@@ -14,6 +14,13 @@ let ball = {
         this.ctx.arc(this.x, this.y, this.d, 0, 2 * Math.PI);
         this.ctx.fillStyle = grd;
         this.ctx.fill()
+
+        // this.ctx.moveTo(0, player2.y -player2.l);
+        // this.ctx.lineTo(gameboard.board.width, player2.y - player2.l);
+
+        // this.ctx.moveTo(0, this.y);
+        // this.ctx.lineTo(gameboard.board.width, this.y);
+        // this.ctx.stroke();
     },
     setup: function(){
         // Sets the ball to start position and sets the starting "y" speed which creates the ball angle
@@ -39,23 +46,34 @@ let ball = {
             gameboard.wall.play()
         }
 
-        if(this.x < player1.x + player1.w + this.d && this.y < player1.y + 25 && this.y  > (player1.y-player1.l-25)){
+        if(this.x < player1.x + player1.w + this.d && this.y < player1.y + 30 && this.y  > (player1.y-player1.l-25)){
+            if(this.y > player1.y){
+                this.dy += 4
+            } else if (this.y < player1.y -player1.l){
+                this.dy -= 4
+            }
             this.speed *= -1;
             gameboard.bounce.play()
         }
 
-        if(this.x > player2.x - player2.w - this.d &&  this.y < player2.y + 25 && this.y  > (player2.y-player2.l-25)){
+        if(this.x > player2.x - player2.w - this.d &&  this.y < player2.y + 30 && this.y  > (player2.y-player2.l-25)){
+            if(this.y > player2.y){
+                this.dy += 4
+            } else if (this.y < player2.y -player2.l){
+                this.dy -= 4
+            }
+
             this.speed *= -1;
             gameboard.bounce.play()
         }
 
-        if(this.x > gameboard.board.width){
+        if(this.x > gameboard.board.width - player2.w - this.d + 5){
             game.stop = true
             gameboard.point.play()
             player1.score()
         }
 
-        if(this.x < 0){
+        if(this.x < 0 + player1.w + (this.d/2)){
             game.stop = true
             gameboard.point.play()
             player2.score()
