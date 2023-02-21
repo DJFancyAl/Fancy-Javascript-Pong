@@ -3,14 +3,14 @@ window.onload = () => {
     gameboard.getScores()
 }
 
-let header = document.getElementsByTagName('header')
-let height = header[0].offsetHeight
-console.log(height)
+
 // Buttons
 let reset = document.getElementById('reset')
 let instructions = document.getElementById("instructions");
 let credits = document.getElementById("credit")
 
+
+//  * Title: How To Create a Modal Box * Author:(W3 Schools)) * Date: (2023) * Availability: (https://www.w3schools.com/howto/howto_css_modals.asp) * 
 // Modals
 let instructionModal = document.getElementById("instruction-modal");
 let creditsModal = document.getElementById("credits-modal");

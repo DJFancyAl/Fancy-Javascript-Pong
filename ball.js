@@ -1,3 +1,4 @@
+// * Title: HTML5 Canvas Part 2 - Animation * Author:(Potts, T)) * Date: (2019) * Availability: (https://codepen.io/Tyler_Potts_/pen/YzzwXBJ?editors=0010) *
 let ball = {
     x: 0, //The x location of the center of the ball
     y: 0, // The y Location of the center of the ball
