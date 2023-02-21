@@ -4,6 +4,7 @@
     --darkPurple: #9A5BFF;
     --lightPurple: #E67BF7;
     --sand: #F9E3BD;
+    --success: #36ce66;
   }
 
 body {
@@ -43,6 +44,7 @@ header h1{
     width:100px;
     border-radius: 0.5rem;
     border: 2px solid var(--blue);
+    transition: 1s;
 }
 
 .scores {
@@ -62,9 +64,22 @@ header h1{
 #two-player{
     margin-left: 1.5rem;
 }
+#credits{
+    width: 95%;
+    text-align: right;
+    margin-top: 0.5rem;
+    font-size: 0.8rem;
+}
+#credits a{
+    color: var(--blue);
+    cursor: pointer;
+}
+#credits a:hover{
+    color: var(--sand);
+}
 
-#reset {
-    width:40%;
+button {
+    width:45%;
     padding: 0.5rem;
     color: var(--blue);
     font-family: 'Orbitron', sans-serif;
@@ -74,10 +89,20 @@ header h1{
     border-radius: 0.5rem;
     cursor: pointer;
 }
+button:hover{
+    background-color: var(--blue);
+    color: var(--sand);
+}
+
+.material-symbols-sharp {
+    font-size: 14px;
+    position: relative;
+    top:2px
+}
 
 .container {
     width: 100%;
-    height: calc(100vh - 159px);
+    height: calc(100vh - 174px);
     text-align: center;
     background-size: cover;
     
@@ -94,3 +119,56 @@ canvas {
     background-color: var(--blue-trans);
     cursor: none;
 }
+
+/* The Modal (background) */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+  }
+  
+  /* Modal Content/Box */
+  .modal-content {
+    background-color: var(--sand);
+    margin: 2% auto; /* 15% from the top and centered */
+    padding: 20px;
+    border: 1px solid #888;
+    width: 60%; /* Could be more or less, depending on screen size */
+    color: var(--blue);
+    line-height: 1.5rem;
+  }
+  
+  /* The Close Button */
+  .close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+  }
+  
+  .close:hover,
+  .close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+  }
+  
+  h2{
+    color: var(--lightPurple);
+    background-color: var(--blue);
+    display: inline-block;
+    padding: 1rem;
+    width: 60%;
+  }
+  h3{
+    color: var(--darkPurple);
+    margin-top: 3rem;
+    text-decoration: underline;
+  }

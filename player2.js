@@ -17,9 +17,9 @@ let player2 = {
     direction: null,
     move: function(){
         if(game.mode == 1){
-            if(this.y > ball.y + 50){
+            if(this.y > ball.y + 60){
                 this.direction = 'up'
-            } else if(this.y < ball.y - 80) {
+            } else if(this.y < ball.y -60) {
                 this.direction = 'down'
             }
         }
@@ -36,6 +36,7 @@ let player2 = {
     score: function(){
         this.currentScore += 1
         gameboard.scores[1].textContent = this.currentScore
+        gameboard.scoreAnimation(0)
 
         if(this.currentScore > player1.currentScore){
             ball.speed -= 3

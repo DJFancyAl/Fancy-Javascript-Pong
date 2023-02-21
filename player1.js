@@ -28,6 +28,7 @@ let player1 = {
     score: function(){
         this.currentScore += 1
         gameboard.scores[0].textContent = this.currentScore
+        gameboard.scoreAnimation(0)
 
         if(this.currentScore > player2.currentScore){
             ball.speed += 3

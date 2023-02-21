@@ -7,6 +7,7 @@ let gameboard = {
         this.ctx.clearRect(0, 0, this.board.width, this.board.height)
     },
     scores: document.getElementsByClassName('score'), // Gets the 'score' elements. Used for updating the score.
+    scoreboards: document.getElementsByClassName('score-tab'), // Gets the 'score-tab' elements. Used for updating the score.
     resetScores: function(){
         // Sets the scoreboard to all zeros.
         for(let i=0; i < this.scores.length; i++){
@@ -64,6 +65,15 @@ let gameboard = {
 
         this.background.style.background = "url(data:image/svg+xml;base64,"+encoded+")";
         this.background.style.backgroundSize = 'cover'
+    },
+    scoreAnimation: function(board){
+        // Flashes a scoreboard green when a point is scored or a match ends.
+        this.scoreboards[board].style.backgroundColor = 'var(--success)'
+        this.scoreboards[board].style.transform = 'scale(1.2)'
+        setTimeout(() => {
+            this.scoreboards[board].style.backgroundColor = 'var(--sand)'
+            this.scoreboards[board].style.transform = 'scale(1)'
+        }, 1500)
     },
     modes: document.getElementsByName('mode'), // Gets the 'mode' elements. Used for selecting game mode.
     bounce: document.getElementById('bounce'), // Gets the 'bounce' audio element

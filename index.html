@@ -8,6 +8,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Sharp:opsz,wght,FILL,GRAD@48,700,1,0" />
     <link rel="stylesheet" href="./styles.css">
 </head>
 <body>
@@ -20,25 +21,60 @@
 
         <h1>Fancy Javascript Pong</h1>
 
-        <div class="control">Controls<br>
+        <div class="control">Options<br>
             <div id="mode-buttons">
                 <input id="one-player" type="radio" name="mode" value="1">
                 <label for="one-player">One Player</label>
                 <input id="two-player" type="radio" name="mode" value="2">
                 <label for="two-player">Two Player</label>
             </div>
-            <button id="reset">Reset</button>
+            <div id="option-buttons">
+                <button id="reset">Reset <span class="material-symbols-sharp">restart_alt</span></button>
+                <button id="instructions">Instructions <span class="material-symbols-sharp">local_library</span></button>
+            </div>
+            <div id="credits"><a id="credit">Credits</a></div>
         </div>
     </header>
 
-    <div id="gameBack" class="container">
+    <main id="gameBack" class="container">
         <canvas width="1200" height="600">Your browser does not support the HTML5 canvas tag.</canvas>
-    </div>
+    </main>
     
     <audio id="bounce" src="./assets/audio/bounce.mp3" preload="auto"></audio>
     <audio id="wall" src="./assets/audio/wall.mp3" preload="auto"></audio>
     <audio id="point" src="./assets/audio/point.mp3" preload="auto"></audio>
     <audio id="victory" src="./assets/audio/victory.mp3" preload="auto"></audio>
+
+    <div id="instruction-modal" class="modal">
+        <div class="modal-content">
+        <span class="close material-symbols-sharp">close</span>
+        <h2>Instructions</h2>
+        <p>Learn how to play "Fancy Javascript Pong" below.</p>
+        <h3>The Game</h3>
+        <p>Playing this game is easy. Winning it on the other hand...not so much. The objective is to score 5 points before your opponent by getting the ball past their paddle. Once a player has scored 5 points - the match will is won! Want a rematch?? Match score will be kept also, so you can play as many games as you like.</p>
+        <h3>Game Modes</h3>
+        <p>The game may be played in either single player or two player modes. Choose which one by using the options buttons in the upper right. Upon playing the game, "Player 1" will always control the paddle on the left side of the screen, while "Player 2" will always use the right paddle. The controls will change depending on which mode you choose:</p>
+        <p><b>Single Player:</b> this is the opportunity to really hone your skills against the computer opponent. When playing against the computer the player will use the <em>Up Arrow</em> to move the paddle up and the <em>Down Arrow</em> to move the paddle down. The computer opponent will try to return the ball, but be ready -he's super competitive.</p>
+        <p><b>Two Player:</b> now it's time to face off against your friend (or enemy)...This time both paddles can be controlled. However, Player 1's controls will change. In this game mode Player 1 will use the <em>W</em> key to move the paddle up and the <em>S</em> key to move it down. Meanwhile, Player 2 may use the <em>Up Arrow</em> and <em>Down Arrow</em> keys as before.</p>
+        <p>*Game & Match scores will be reset if you change game mode.</p>
+        <h3>Scores</h3>
+        <p>Players will immediately be notified if a point is scored. Additionally, the scoreboard in the upper left will flash green and update the score. Need a break? Well match scores will be saved, so you can always come back later and pick up right where you left off. Keep the matches going until the ultimate winner is decided!</p>
+        <h3>Playing the Game</h3>
+        <p>The game is designed for fast-paced action. To start the point, just press the <em>Space</em> button on your keyboard, and the ball will take off. Be ready, as the ball will take off in a random angle and you may need to react right away.</p>
+        <p>Now move your paddle into position. If the ball hits anywhere in the middle of your paddle then it will deflect back towards your opponent. Good defense like this is never a bad option! However, your opponent may find it easy to keep up with your moves... To really throw them off their game - try hitting the ball towards the ends of your paddle. This will cause the angle of the ball to change, and make it much more difficult for your opponent to get into position.</p>
+        <p><b>Was that too easy?</b> Well things are about to get much more challenging. With each point scored the ball will speed up a little bit. Getting that 1st point on the board may be easy work finishing off a game will test your speed and skills. Try to get ahead of your opponent and stay there, otherwise they may leave you in the dust!</p>
+        </div>
+    </div>
+
+    <div id="credits-modal" class="modal">
+        <div class="modal-content">
+        <span class="close material-symbols-sharp">close</span>
+        <h2>Credits</h2>
+        <h3>Audio</h3>
+        <p>Playing this game is easy. Winning it on the other hand...not so much. The objective is to score 5 points before your opponent by getting the ball past their paddle. Once a player has scored 5 points - the match will is won! Want a rematch?? Match score will be kept also, so you can play as many games as you like.</p>
+        <h3>Background Designs</h3>
+        </div>
+    </div>
 
     <script src="./gameboard.js"></script>
     <script src="./player1.js"></script>

@@ -33,6 +33,7 @@ let game = {
     stop: false,
     endMatch: function(player){
         gameboard.victory.play()
+        gameboard.scoreAnimation(1)
         this.ctx.font = "bolder 60px Arial";
         this.ctx.fillStyle = "#E67BF7";
         this.ctx.textAlign = "center";
@@ -52,7 +53,7 @@ let game = {
             if(gameboard.modes[i].checked){
                 game.mode = gameboard.modes[i].value
                 game.reset()
-                ball.s = 12
+                ball.speed = 14
             }
         }
     },
@@ -64,12 +65,10 @@ let game = {
         gameboard.resetScores()
         gameboard.saveScores()
         game.setup()
-        ball.s = 12
+        ball.speed = 14
     }
 }
 
 for(let i=0; i < gameboard.modes.length; i++){
     gameboard.modes[i].addEventListener('click', game.setMode)
 }
-
-// game.setMode()
