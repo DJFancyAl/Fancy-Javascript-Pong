@@ -19,12 +19,27 @@ header{
     color: var(--lightPurple);
     display: flex;
     flex-direction: row;
+    flex-wrap: wrap;
     justify-content: space-around;
     border-bottom: 3px ridge var(--lightPurple);
 }
 
 header h1{
     align-self: center;
+}
+
+h2{
+    color: var(--lightPurple);
+    background-color: var(--blue);
+    display: inline-block;
+    padding: 1rem;
+    width: 60%;
+}
+
+h3{
+    color: var(--darkPurple);
+    margin-top: 3rem;
+    text-decoration: underline;
 }
 
 .control {
@@ -132,10 +147,10 @@ canvas {
     overflow: auto; /* Enable scroll if needed */
     background-color: rgb(0,0,0); /* Fallback color */
     background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
-  }
+}
   
-  /* Modal Content/Box */
-  .modal-content {
+/* Modal Content/Box */
+.modal-content {
     background-color: var(--sand);
     margin: 2% auto; /* 15% from the top and centered */
     padding: 20px;
@@ -143,32 +158,26 @@ canvas {
     width: 60%; /* Could be more or less, depending on screen size */
     color: var(--blue);
     line-height: 1.5rem;
-  }
+}
   
-  /* The Close Button */
-  .close {
-    color: #aaa;
+/* The Close Button */
+.close {
+    color: var(--darkPurple);
     float: right;
     font-size: 28px;
     font-weight: bold;
-  }
+}
   
-  .close:hover,
-  .close:focus {
-    color: black;
+.close:hover,
+.close:focus {
+    color: var(--blue);
     text-decoration: none;
     cursor: pointer;
-  }
-  
-  h2{
-    color: var(--lightPurple);
-    background-color: var(--blue);
-    display: inline-block;
-    padding: 1rem;
-    width: 60%;
-  }
-  h3{
-    color: var(--darkPurple);
-    margin-top: 3rem;
-    text-decoration: underline;
-  }
+}
+
+
+@media screen and (max-width: 1200px) {
+    .control {
+        width: 80%;
+    }
+}
