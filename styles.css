@@ -26,6 +26,10 @@ header{
 
 header h1{
     align-self: center;
+    animation-name: flash-title;
+    animation-duration: 0.5s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
 }
 
 h2{
@@ -180,4 +184,9 @@ canvas {
     .control {
         width: 80%;
     }
+}
+
+@keyframes flash-title {
+    from {text-shadow: none; transform: scale(1);}
+    to {text-shadow: 2px 0px 3px #fff; transform: scale(1.2);}
 }

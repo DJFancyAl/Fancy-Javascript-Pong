@@ -17,6 +17,7 @@ let game = {
         // Starts the game and handles rendering
         requestID = requestAnimationFrame(game.start);
         gameboard.clear()
+        gameboard.animations("stop")
         
         ball.move()
         ball.create()
@@ -45,11 +46,12 @@ let game = {
         this.ctx.fillText("wins the match!", gameboard.board.width/2, (gameboard.board.height/2) + 30)
         this.ctx.fillStyle = "#E67BF7";
         this.ctx.font = "bolder 30px Tahoma";
-        this.ctx.fillText("Press space to play another.", gameboard.board.width/2, (gameboard.board.height/2) + 00)
+        this.ctx.fillText("Press space to play another.", gameboard.board.width/2, (gameboard.board.height/2) + 90)
         player1.currentScore = 0
         player2.currentScore = 0
         gameboard.scores[0].textContent = 0
         gameboard.scores[1].textContent = 0
+        gameboard.animations("start")
         gameboard.saveScores()
         ball.speed = 14
     },
@@ -75,6 +77,7 @@ let game = {
         game.setup()
         ball.speed = 14
         gameboard.startMessage()
+        gameboard.animations("start")
     }
 }
 

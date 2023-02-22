@@ -1,4 +1,5 @@
 let gameboard = {
+    title: document.getElementsByTagName("h1")[0],
     background: document.getElementById("gameBack"), // Gets the container element
     board: document.querySelector('canvas'), // Gets the canvas element
     ctx: '', // The cavas context - used for drawing.
@@ -106,9 +107,16 @@ let gameboard = {
             alert("Uh oh! This game must be played on a larger screen...")
             setTimeout(this.checkScreen, 0)
         }
+    },
+    animations: function(command){
+        console.log(this.title)
+        if(command == "start"){
+            this.title.style.animationName = "flash-title";
+        } else {
+            this.title.style.animationName = "none";
+        }
     }
 }
-
 
 // Initialize the gameboard
 gameboard.ctx = gameboard.board.getContext('2d')
