@@ -1,8 +1,9 @@
 let game = {
-    started: false,
-    set: false,
+    started: false, // Tells if gameplay is active (used to control key event handlers)
+    set: false, // Tells if the board is set
     ctx: gameboard.ctx,
     setup: function(){
+        // Sets up for a new point
         this.started = false
         gameboard.clear()
         gameboard.setBackground()
@@ -13,8 +14,8 @@ let game = {
         this.set = true
     },
     start: function(){
+        // Starts the game and handles rendering
         requestID = requestAnimationFrame(game.start);
-        game.started = true
         gameboard.clear()
         
         ball.move()
@@ -25,13 +26,15 @@ let game = {
         player2.create()
         
         if(game.stop){
+            // Stops the loop if a point is scored
             cancelAnimationFrame(requestID);
             game.set = false
             game.started = false
         }
     },
-    stop: false,
+    stop: false, // Tells if the game is stopped (used to stop the animation loop)
     endMatch: function(player){
+        // Performs the actions when a match is completed.
         gameboard.victory.play()
         gameboard.scoreAnimation(1)
         this.ctx.font = "bolder 60px Arial";
@@ -47,8 +50,9 @@ let game = {
         gameboard.saveScores()
         ball.speed = 14
     },
-    mode: 1,
+    mode: 1, // Stores the game mode ("One Player" vs. "Two Player")
     setMode: function(){
+        // Gets the selected game mode and sets the variable above.
         for(let i=0; i < gameboard.modes.length; i++){
             if(gameboard.modes[i].checked){
                 game.mode = gameboard.modes[i].value
@@ -58,6 +62,7 @@ let game = {
         }
     },
     reset: function(){
+        // Performs actions to reset the entire gameboard.
         player1.currentScore = 0
         player2.currentScore = 0
         player1.matchScore = 0
@@ -70,6 +75,7 @@ let game = {
     }
 }
 
+// Event listeners for the mode radio buttons.
 for(let i=0; i < gameboard.modes.length; i++){
     gameboard.modes[i].addEventListener('click', game.setMode)
 }

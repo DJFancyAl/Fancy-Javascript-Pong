@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Fancy Javascript Pong!</title>
+    <!-- Imports -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&display=swap" rel="stylesheet">
@@ -13,7 +14,9 @@
     <link rel="stylesheet" href="./styles.css">
 </head>
 <body>
+    <!-- Contains scoreboard, title, and options -->
     <header>
+        <!-- The Scoreboard-->
         <div class="control">
             Scores<br>
             <div class="score-tab"><div class="scores"><span class="score">0</span>-<span class="score">0</span></div><br>Game</div>
@@ -22,6 +25,7 @@
 
         <h1>Fancy Javascript Pong</h1>
 
+        <!-- The options container -->
         <div class="control">Options<br>
             <div id="mode-buttons">
                 <input id="one-player" type="radio" name="mode" value="1">
@@ -38,9 +42,11 @@
     </header>
 
     <main id="gameBack" class="container">
+        <!-- The canvas where the game is played -->
         <canvas width="1200" height="600">Your browser does not support the HTML5 canvas tag.</canvas>
     </main>
-    
+
+    <!-- Imports the sounds -->    
     <audio id="bounce" src="./assets/audio/bounce.mp3" preload="auto"></audio>
     <audio id="wall" src="./assets/audio/wall.mp3" preload="auto"></audio>
     <audio id="point" src="./assets/audio/point.mp3" preload="auto"></audio>
@@ -79,6 +85,7 @@
         </div>
     </div>
 
+    <!-- Import the JavaScript scripts -->
     <script src="./scripts/backgrounds.js"></script>
     <script src="./scripts/gameboard.js"></script>
     <script src="./scripts/player1.js"></script>

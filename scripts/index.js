@@ -1,7 +1,9 @@
+// Perfrom tasks when the game is loaded
 window.onload = () => {
     game.setup()
     gameboard.startMessage()
     gameboard.getScores()
+    gameboard.checkScreen()
 }
 
 
@@ -60,12 +62,12 @@ window.addEventListener('keyup', e => {
         return
     }
 
-    if(!game.set){
-        game.setup()
-        return
-    }
-
     if(e.key == ' '){
+        if(!game.set){
+            game.setup()
+            return
+        }
+        game.started = true
         game.start()
     }
 })

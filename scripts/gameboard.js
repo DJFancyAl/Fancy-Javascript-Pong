@@ -9,6 +9,7 @@ let gameboard = {
     scores: document.getElementsByClassName('score'), // Gets the 'score' elements. Used for updating the score.
     scoreboards: document.getElementsByClassName('score-tab'), // Gets the 'score-tab' elements. Used for updating the score.
     startMessage: function (){
+        // Creates a message to press the "Space" key to start
         this.ctx.font = "bolder 60px Arial";
         this.ctx.fillStyle = "#F9E3BD";
         this.ctx.textAlign = "center";
@@ -36,12 +37,14 @@ let gameboard = {
         let mode = JSON.parse(localStorage.getItem("mode"))
         
         if(mode){
+            // Sets the game mode if one in localstorage
             game.mode = mode
         } else {
             game.mode = 1
         }
 
         if(game.mode == '1'){
+            // Sets the radio buttons
             this.modes[0].checked = true
         } else {
             this.modes[1].checked = true
@@ -49,12 +52,14 @@ let gameboard = {
 
         
         if(score1){
+            // Sets Player 1 score if it's in localstorage
             player1.matchScore = score1
         } else {
             player1.matchScore = 0
         }
     
         if(score2){
+             // Sets Player 2 score if it's in localstorage
             player2.matchScore = score2
         } else {
             player2.matchScore = 0
@@ -70,7 +75,6 @@ let gameboard = {
             rand = Math.round(Math.random() * (this.backgrounds.length-1))
         }
         this.currentBg = rand
-        console.log(this.backgrounds.length)
         let encoded = window.btoa(this.backgrounds[rand]);
 
         this.background.style.background = "url(data:image/svg+xml;base64,"+encoded+")";
@@ -83,7 +87,7 @@ let gameboard = {
         setTimeout(() => {
             this.scoreboards[board].style.backgroundColor = 'var(--sand)'
             this.scoreboards[board].style.transform = 'scale(1)'
-        }, 1500)
+        }, 800)
     },
     modes: document.getElementsByName('mode'), // Gets the 'mode' elements. Used for selecting game mode.
     bounce: document.getElementById('bounce'), // Gets the 'bounce' audio element
@@ -91,9 +95,22 @@ let gameboard = {
     point: document.getElementById('point'), // Gets the 'point' audio element
     victory: document.getElementById('victory'), // Gets the 'point' audio element
     currentBg: 0, // Index of the current background
-    backgrounds: []
+    backgrounds: [], // Array of SVG backgrounds
+    checkScreen: function(){
+        // Alerts the user if they must play on a larger screen
+        let width = gameboard.background.offsetWidth
+        let height = gameboard.background.offsetHeight
+
+        if(width < 1250 || height < 650){
+            // Loops until the screen is large enough
+            alert("Uh oh! This game must be played on a larger screen...")
+            setTimeout(this.checkScreen, 0)
+        }
+    }
 }
 
+
+// Initialize the gameboard
 gameboard.ctx = gameboard.board.getContext('2d')
 gameboard.backgrounds = backgrounds
 gameboard.resetScores()

@@ -1,11 +1,12 @@
 let player2 = {
-    w: 0,
-    l: 0,
-    x: 0,
-    y: 0,
-    s: 0,
+    w: 0, // Width of player 2's paddle (set on setup)
+    l: 0, // Length of player 2's paddle (set on setup)
+    x: 0, // X position of player 2's paddle (set on setup)
+    y: 0, // Y position of player 2's paddle (set on setup)
+    s: 0, // Speed of player 2's paddle (set on setup)
     ctx: gameboard.ctx,
     create: function(){
+        // Handles rendering of Player 2's paddle
         let grd = this.ctx.createLinearGradient(this.x + 10, this.y, this.x - 5  , this.y);
         grd.addColorStop(0, "#E67BF7");
         grd.addColorStop(1, "#9A5BFF");
@@ -19,9 +20,11 @@ let player2 = {
         this.ctx.fillStyle = grd;
         this.ctx.fill()
     },
-    direction: null,
+    direction: null, // Direction of player 2's paddle (set with the move funciton)
     move: function(){
+        // Tells paddle to move along Y axis based on the direction set
         if(game.mode == 1){
+            // If 1 player mode - change paddle direction based on ball position
             if(this.y > ball.y + 60){
                 this.direction = 'up'
             } else if(this.y < ball.y -60) {
@@ -36,18 +39,21 @@ let player2 = {
             this.y += this.s;
         }
     },
-    currentScore: 0,
-    matchScore: 0,
+    currentScore: 0, // Current game score for Player 2
+    matchScore: 0, // Current match score for Player 2
     score: function(){
+        // Performs actions when Player 2 scores
         this.currentScore += 1
         gameboard.scores[1].textContent = this.currentScore
         gameboard.scoreAnimation(0)
 
         if(this.currentScore > player1.currentScore){
+            // Increases the ball speed if Player 2 scores
             ball.speed -= 3
         }
 
         if(this.currentScore == 5){
+            // Performs actions if Player 2 wins the match
             this.matchScore += 1
             game.endMatch(2)
             gameboard.scores[3].textContent = this.matchScore
@@ -62,6 +68,7 @@ let player2 = {
         this.ctx.fillText(player1.currentScore + " - " + player2.currentScore, gameboard.board.width/2, (gameboard.board.height/2) + 30)
     },
     setUp: function(){
+        // Sets up Player 2 for the game
         this.w = 10,
         this.l = 120,
         this.x = gameboard.board.width - 20,
@@ -73,6 +80,7 @@ let player2 = {
 }
 
 window.addEventListener('keydown', (e) => {
+    // Handles arrow key events if in 2 player mode
     if(game.mode == 2 && e.key == "ArrowUp"){
         player2.direction = "up"
     }
@@ -81,6 +89,8 @@ window.addEventListener('keydown', (e) => {
     }
 })
 
-window.addEventListener('keyup', () => {
+window.addEventListener('keyup', (e) => {
+    // Stops the paddles movement on keyup
+    if(game.mode == 2 && e.key == "ArrowUp" || e.key == "ArrowDown")
     player2.direction = null
 })
