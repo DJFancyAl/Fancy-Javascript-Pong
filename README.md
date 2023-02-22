@@ -44,4 +44,4 @@ Now move your paddle into position. If the ball hits anywhere in the middle of y
 
 The game was built with pure HTML, CSS, and JavaScript.
 
-**HTML - ** to make such a game with so much fast paced movement, it quickly became clear that I would need something more than HTML elements (DIVs, SPANs, etc.) to make the game work. The solution was the HTML [<Canvas> element](https://www.w3schools.com/graphics/canvas_intro.asp). The Canvas element allows you to "draw" on the canvas using JavaScript.
+**HTML -** to make such a game with so much fast paced movement, it quickly became clear that I would need something more than HTML elements (DIVs, SPANs, etc.) to make the game work. The solution was the HTML <\Canvas\> element](https://www.w3schools.com/graphics/canvas_intro.asp). The Canvas element allows you to "draw" on the canvas using JavaScript.
