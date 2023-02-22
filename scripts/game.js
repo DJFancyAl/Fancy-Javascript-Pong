@@ -37,12 +37,15 @@ let game = {
         // Performs the actions when a match is completed.
         gameboard.victory.play()
         gameboard.scoreAnimation(1)
-        this.ctx.font = "bolder 60px Arial";
+        this.ctx.font = "bolder 60px Tahoma";
         this.ctx.fillStyle = "#F9E3BD";
         this.ctx.textAlign = "center";
         this.ctx.fillText("PLAYER " + player , gameboard.board.width/2, (gameboard.board.height/2) - 60)
-        this.ctx.font = "bolder 60px Arial";
+        this.ctx.font = "bolder 60px Tahoma";
         this.ctx.fillText("wins the match!", gameboard.board.width/2, (gameboard.board.height/2) + 30)
+        this.ctx.fillStyle = "#E67BF7";
+        this.ctx.font = "bolder 30px Tahoma";
+        this.ctx.fillText("Press space to play another.", gameboard.board.width/2, (gameboard.board.height/2) + 00)
         player1.currentScore = 0
         player2.currentScore = 0
         gameboard.scores[0].textContent = 0
