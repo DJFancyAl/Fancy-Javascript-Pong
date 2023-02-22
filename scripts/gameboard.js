@@ -109,7 +109,6 @@ let gameboard = {
         }
     },
     animations: function(command){
-        console.log(this.title)
         if(command == "start"){
             this.title.style.animationName = "flash-title";
         } else {

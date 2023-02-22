@@ -56,6 +56,7 @@ let player1 = {
         this.ctx.fillStyle = "#F9E3BD";
         this.ctx.textAlign = "center";
         this.ctx.fillText("PLAYER 1 SCORES!", gameboard.board.width/2, (gameboard.board.height/2) - 60)
+        this.ctx.fillStyle = "#E67BF7";
         this.ctx.font = "bolder 50px Tahoma";
         this.ctx.fillText(player1.currentScore + " - " + player2.currentScore, gameboard.board.width/2, (gameboard.board.height/2) + 30)  
     },

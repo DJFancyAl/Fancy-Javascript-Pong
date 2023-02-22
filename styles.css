@@ -188,5 +188,5 @@ canvas {
 
 @keyframes flash-title {
     from {text-shadow: none; transform: scale(1);}
-    to {text-shadow: 2px 0px 3px #fff; transform: scale(1.2);}
+    to {text-shadow: 2px 0px 3px #fff; transform: scale(1.2); ;}
 }
