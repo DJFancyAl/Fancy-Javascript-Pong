@@ -35,7 +35,7 @@ let game = {
         gameboard.victory.play()
         gameboard.scoreAnimation(1)
         this.ctx.font = "bolder 60px Arial";
-        this.ctx.fillStyle = "#E67BF7";
+        this.ctx.fillStyle = "#F9E3BD";
         this.ctx.textAlign = "center";
         this.ctx.fillText("PLAYER " + player , gameboard.board.width/2, (gameboard.board.height/2) - 60)
         this.ctx.font = "bolder 60px Arial";
@@ -45,7 +45,7 @@ let game = {
         gameboard.scores[0].textContent = 0
         gameboard.scores[1].textContent = 0
         gameboard.saveScores()
-        ball.speed = 12
+        ball.speed = 14
     },
     mode: 1,
     setMode: function(){
@@ -66,6 +66,7 @@ let game = {
         gameboard.saveScores()
         game.setup()
         ball.speed = 14
+        gameboard.startMessage()
     }
 }
 

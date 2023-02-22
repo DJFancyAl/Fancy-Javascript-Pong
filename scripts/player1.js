@@ -6,12 +6,18 @@ let player1 = {
     s: 0,
     ctx: gameboard.ctx,
     create: function(){
+        let grd = this.ctx.createLinearGradient(this.x + 5, this.y, this.x - 10  , this.y);
+        grd.addColorStop(0, "#9A5BFF");
+        grd.addColorStop(1, "#E67BF7");
+        this.ctx.strokeStyle = "#F9E3BD";
+
         this.ctx.beginPath();
         this.ctx.arc(this.x,this.y,this.w,0,Math.PI);
         this.ctx.arc(this.x,this.y-this.l,this.w,Math.PI, 0);
         this.ctx.lineTo(this.x + this.w, this.y);
+        this.ctx.lineWidth = 5
         this.ctx.stroke();
-        this.ctx.fillStyle = "pink";
+        this.ctx.fillStyle = grd;
         this.ctx.fill()
     },
     direction: null,
@@ -20,7 +26,7 @@ let player1 = {
             this.y -= this.s;
         }
         if(this.direction  == 'down' && this.y < (gameboard.board.height - this.w - 5)){
-            this.y += this.s;
+            this.y += this.s; 
         }
     },
     currentScore: 0,
@@ -42,11 +48,11 @@ let player1 = {
         }
         
         this.ctx.font = "bolder 60px Arial";
-        this.ctx.fillStyle = "#E67BF7;";
+        this.ctx.fillStyle = "#F9E3BD";
         this.ctx.textAlign = "center";
         this.ctx.fillText("PLAYER 1 SCORES!", gameboard.board.width/2, (gameboard.board.height/2) - 60)
         this.ctx.font = "bolder 50px Arial";
-        this.ctx.fillText(player1.currentScore + " - " + player2.currentScore, gameboard.board.width/2, (gameboard.board.height/2) + 30)
+        this.ctx.fillText(player1.currentScore + " - " + player2.currentScore, gameboard.board.width/2, (gameboard.board.height/2) + 30)  
     },
     setUp: function(){
         this.w = 10,

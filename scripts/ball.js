@@ -20,7 +20,7 @@ let ball = {
         // Sets the ball to start position and sets the starting "y" speed which creates the ball angle
         this.x = gameboard.board.width/2
         this.y = gameboard.board.height/2,
-        this.dy = Math.floor(Math.random() * 8) + 1;
+        this.dy = Math.floor(Math.random() * 3) + 1;
         this.dy = Math.floor(Math.random() * 2) == 1 ? this.dy *1 : this.dy*-1;
 
         this.create()
@@ -42,9 +42,9 @@ let ball = {
 
         if(this.x < player1.x + player1.w + this.d && this.y < player1.y + 30 && this.y  > (player1.y-player1.l-25)){
             if(this.y > player1.y){
-                this.dy += 4
+                this.dy += 6
             } else if (this.y < player1.y -player1.l){
-                this.dy -= 4
+                this.dy -= 6
             }
             this.speed *= -1;
             gameboard.bounce.play()
@@ -52,9 +52,9 @@ let ball = {
 
         if(this.x > player2.x - player2.w - this.d &&  this.y < player2.y + 30 && this.y  > (player2.y-player2.l-25)){
             if(this.y > player2.y){
-                this.dy += 4
+                this.dy += 6
             } else if (this.y < player2.y -player2.l){
-                this.dy -= 4
+                this.dy -= 6
             }
 
             this.speed *= -1;

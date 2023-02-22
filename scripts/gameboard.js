@@ -8,6 +8,15 @@ let gameboard = {
     },
     scores: document.getElementsByClassName('score'), // Gets the 'score' elements. Used for updating the score.
     scoreboards: document.getElementsByClassName('score-tab'), // Gets the 'score-tab' elements. Used for updating the score.
+    startMessage: function (){
+        this.ctx.font = "bolder 60px Arial";
+        this.ctx.fillStyle = "#F9E3BD";
+        this.ctx.textAlign = "center";
+        this.ctx.font = "bolder 80px Arial";
+        this.ctx.fillText("Let's get started!", gameboard.board.width/2, (gameboard.board.height/2) - 60)
+        this.ctx.font = "bolder 40px Arial";
+        this.ctx.fillText("Press the  \"space\" bar to start the game.", gameboard.board.width/2, (gameboard.board.height/2) + 80)
+    },
     resetScores: function(){
         // Sets the scoreboard to all zeros.
         for(let i=0; i < this.scores.length; i++){

@@ -6,12 +6,17 @@ let player2 = {
     s: 0,
     ctx: gameboard.ctx,
     create: function(){
+        let grd = this.ctx.createLinearGradient(this.x + 10, this.y, this.x - 5  , this.y);
+        grd.addColorStop(0, "#E67BF7");
+        grd.addColorStop(1, "#9A5BFF");
+        this.ctx.strokeStyle = "#F9E3BD";
+
         this.ctx.beginPath();
         this.ctx.arc(this.x,this.y,this.w,0,Math.PI);
         this.ctx.arc(this.x,this.y-this.l,this.w,Math.PI, 0);
         this.ctx.lineTo(this.x + this.w, this.y);
         this.ctx.stroke();
-        this.ctx.fillStyle = "pink";
+        this.ctx.fillStyle = grd;
         this.ctx.fill()
     },
     direction: null,
@@ -50,7 +55,7 @@ let player2 = {
         }
 
         this.ctx.font = "bolder 60px Arial";
-        this.ctx.fillStyle = "#E67BF7";
+        this.ctx.fillStyle = "#F9E3BD";
         this.ctx.textAlign = "center";
         this.ctx.fillText("PLAYER 2 SCORES!", gameboard.board.width/2, (gameboard.board.height/2) - 60)
         this.ctx.font = "bolder 50px Arial";

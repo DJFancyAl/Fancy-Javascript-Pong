@@ -1,5 +1,6 @@
 window.onload = () => {
     game.setup()
+    gameboard.startMessage()
     gameboard.getScores()
 }
 
@@ -51,6 +52,9 @@ window.addEventListener('click', (e) => {
 
 // Reset Button
 reset.addEventListener('click', game.reset)
+
+// Keys
+window.addEventListener('keydown', e => e.preventDefault())
 window.addEventListener('keyup', e => {
     if(game.started){
         return
