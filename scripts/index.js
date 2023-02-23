@@ -18,10 +18,13 @@ let muted = document.getElementsByName('muted')[0]
 // Modals
 let instructionModal = document.getElementById("instruction-modal");
 let creditsModal = document.getElementById("credits-modal");
+let screenModal = document.getElementById("screen-modal");
 let closeInstruction = document.getElementsByClassName("close")[0];
 let closeCredits = document.getElementsByClassName("close")[1];
 
 // Event Listeners
+window.addEventListener('resize', gameboard.checkScreen) // Checks screen size when window is changed.
+
 instructions.addEventListener('click', () => {
     //Opens the modal
     instructionModal.style.display = "block";

@@ -101,11 +101,12 @@ let gameboard = {
         // Alerts the user if they must play on a larger screen
         let width = gameboard.background.offsetWidth
         let height = gameboard.background.offsetHeight
+        console.log('checking')
 
         if(width < 1250 || height < 650){
-            // Loops until the screen is large enough
-            alert("Uh oh! This game must be played on a larger screen...")
-            setTimeout(this.checkScreen, 0)
+            screenModal.style.display = "block";
+        } else {
+            screenModal.style.display = "none";
         }
     },
     animations: function(command){
