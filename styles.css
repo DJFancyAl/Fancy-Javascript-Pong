@@ -92,6 +92,7 @@ h3{
 #credits a{
     color: var(--blue);
     cursor: pointer;
+    margin-right: 1.25rem;
 }
 #credits a:hover{
     color: var(--sand);
@@ -111,6 +112,10 @@ button {
 button:hover{
     background-color: var(--blue);
     color: var(--sand);
+}
+
+input[type="checkbox"]{
+    accent-color: var(--blue);
 }
 
 .material-symbols-sharp {

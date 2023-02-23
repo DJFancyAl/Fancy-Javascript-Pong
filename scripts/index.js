@@ -11,6 +11,7 @@ window.onload = () => {
 let reset = document.getElementById('reset')
 let instructions = document.getElementById("instructions");
 let credits = document.getElementById("credit")
+let muted = document.getElementsByName('muted')[0]
 
 
 //  * Title: How To Create a Modal Box * Author:(W3 Schools)) * Date: (2023) * Availability: (https://www.w3schools.com/howto/howto_css_modals.asp) * 
@@ -54,6 +55,21 @@ window.addEventListener('click', (e) => {
 
 // Reset Button
 reset.addEventListener('click', game.reset)
+
+// Mute Button
+muted.addEventListener('change', () => {
+    if(muted.checked){
+        gameboard.bounce.muted = true
+        gameboard.wall.muted = true
+        gameboard.point.muted = true
+        gameboard.victory.muted = true
+    } else {
+        gameboard.bounce.muted = false
+        gameboard.wall.muted = false
+        gameboard.point.muted = false
+        gameboard.victory.muted = false
+    }
+})
 
 // Keys
 window.addEventListener('keydown', e => e.preventDefault())
