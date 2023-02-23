@@ -168,6 +168,10 @@ canvas {
     color: var(--blue);
     line-height: 1.5rem;
 }
+
+.modal-content p, .modal-content li {
+    font-weight: bold;
+}
   
 /* The Close Button */
 .close {
