@@ -4,7 +4,7 @@ let ball = {
     y: 0, // The y Location of the center of the ball
     d: 15, // The diameter of the ball
     dy: 0, // The y speed of the ball
-    speed: 14, // The x speed of the ball (game speed)
+    speed: 18, // The x speed of the ball (game speed)
     ctx: gameboard.ctx,
     create: function(){
         // Draws the ball into the canvas

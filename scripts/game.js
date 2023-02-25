@@ -53,7 +53,7 @@ let game = {
         gameboard.scores[1].textContent = 0
         gameboard.animations("start")
         gameboard.saveScores()
-        ball.speed = 14
+        ball.speed = 18
     },
     mode: 1, // Stores the game mode ("One Player" vs. "Two Player")
     setMode: function(){
@@ -62,7 +62,7 @@ let game = {
             if(gameboard.modes[i].checked){
                 game.mode = gameboard.modes[i].value
                 game.reset()
-                ball.speed = 14
+                ball.speed = 18
             }
         }
     },
@@ -75,7 +75,7 @@ let game = {
         gameboard.resetScores()
         gameboard.saveScores()
         game.setup()
-        ball.speed = 14
+        ball.speed = 18
         gameboard.startMessage()
         gameboard.animations("start")
     }

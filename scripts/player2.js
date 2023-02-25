@@ -27,7 +27,7 @@ let player2 = {
             // If 1 player mode - change paddle direction based on ball position
             if(this.y > ball.y + 60){
                 this.direction = 'up'
-            } else if(this.y < ball.y -60) {
+            } else if(this.y < ball.y - 60) {
                 this.direction = 'down'
             }
         }
