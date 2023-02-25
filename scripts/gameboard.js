@@ -81,6 +81,10 @@ let gameboard = {
         this.background.style.background = "url(data:image/svg+xml;base64,"+encoded+")";
         this.background.style.backgroundSize = 'cover'
     },
+    signalHit: function(){
+        this.board.style.borderColor = 'var(--sand)'
+        setTimeout(() => {this.board.style.borderColor = 'var(--lightPurple)'}, 300)
+    },
     scoreAnimation: function(board){
         // Flashes a scoreboard green when a point is scored or a match ends.
         this.scoreboards[board].style.backgroundColor = 'var(--success)'
@@ -101,7 +105,6 @@ let gameboard = {
         // Alerts the user if they must play on a larger screen
         let width = gameboard.background.offsetWidth
         let height = gameboard.background.offsetHeight
-        console.log('checking')
 
         if(width < 1250 || height < 650){
             screenModal.style.display = "flex";

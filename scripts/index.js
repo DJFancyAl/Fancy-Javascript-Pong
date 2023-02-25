@@ -6,11 +6,6 @@ window.onload = () => {
     gameboard.checkScreen()
 }
 
-
-let header = document.getElementsByTagName('header')[0]
-let value = header.offsetHeight
-console.log(value)
-
 // Buttons
 let reset = document.getElementById('reset')
 let instructions = document.getElementById("instructions");

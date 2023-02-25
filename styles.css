@@ -139,7 +139,7 @@ input[type="radio"]{
 
 canvas {
     margin: 2%;
-    border: 5px ridge var(--lightPurple);
+    border: 10px ridge var(--lightPurple);
     background-color: var(--blue-trans);
     cursor: none;
 }

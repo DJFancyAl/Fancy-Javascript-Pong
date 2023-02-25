@@ -47,6 +47,7 @@ let ball = {
 
             this.speed *= -1;
             gameboard.bounce.play()
+            gameboard.signalHit()
         }
 
         if(this.x > player2.x - player2.w - this.d &&  this.y < player2.y + 30 && this.y  > (player2.y-player2.l-25)){
@@ -60,6 +61,7 @@ let ball = {
 
             this.speed *= -1;
             gameboard.bounce.play()
+            gameboard.signalHit()
         }
 
         if(this.x > gameboard.board.width - player2.w - this.d + 5){
