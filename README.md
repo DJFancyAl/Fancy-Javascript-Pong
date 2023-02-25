@@ -1,10 +1,10 @@
 # Fancy-Javascript-Pong
 
-<!-- The game should have a Readme.md file in the GitHub repository that describes the inspiration for the game, explains the controls and how to play the game, lists the technologies used to build the game, and addresses any outstanding bugs or unfinished functionality -->
-
 ## Inspiration
 
 This game was designed to provide a dyanmic and fast-paced gaming experience. I set out to create a game with a lot of motion where the player would have to constantly be engaged with their computer's keyboard. I wanted the game to move so quick that the player couldn't look away, but I also wanted to game to be endlessly playable. Then "AHA!" It's time to make a pong game...
+
+Play the game [here.](https://djfancyal.github.io/Fancy-Javascript-Pong/) 
 
 ---
 
