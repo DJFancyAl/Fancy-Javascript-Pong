@@ -126,7 +126,7 @@ input[type="checkbox"]{
 
 .container {
     width: 100%;
-    height: calc(100vh - 174px);
+    height: calc(100vh - 177px);
     text-align: center;
     background-size: cover;
     
@@ -146,35 +146,37 @@ canvas {
 
 /* * Title: How To Create a Modal Box * Author:(W3 Schools)) * Date: (2023) * Availability: (https://www.w3schools.com/howto/howto_css_modals.asp) *  */
 .modal {
-    display: none; /* Hidden by default */
-    position: fixed; /* Stay in place */
-    z-index: 1; /* Sit on top */
-    left: 0;
+    position: fixed;
+    display: none;
     top: 0;
-    width: 100%; /* Full width */
-    height: 100%; /* Full height */
-    overflow: auto; /* Enable scroll if needed */
-    background-color: rgb(0,0,0); /* Fallback color */
-    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    overflow: auto;
+    background-color: rgb(0,0,0);
+    background-color: rgba(21, 34, 120, 0.4);
+    justify-content: center;
 }
   
-/* Modal Content/Box */
 .modal-content {
-    background-color: var(--sand);
-    margin: 2% auto; /* 15% from the top and centered */
+    margin: auto;
     padding: 20px;
-    border: 1px solid #888;
-    width: 60%; /* Could be more or less, depending on screen size */
+    max-height: 90%;
+    overflow: auto;
+    background-color: var(--sand);
+    border: 5px solid var(--darkPurple);
+    width: 60%;
     color: var(--blue);
     line-height: 1.5rem;
+    align-self: center;
 }
 
 .modal-content p, .modal-content li {
     font-weight:600;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
-  
-/* The Close Button */
+
 .close {
     color: var(--darkPurple);
     float: right;

@@ -7,6 +7,10 @@ window.onload = () => {
 }
 
 
+let header = document.getElementsByTagName('header')[0]
+let value = header.offsetHeight
+console.log(value)
+
 // Buttons
 let reset = document.getElementById('reset')
 let instructions = document.getElementById("instructions");
@@ -27,12 +31,12 @@ window.addEventListener('resize', gameboard.checkScreen) // Checks screen size w
 
 instructions.addEventListener('click', () => {
     //Opens the modal
-    instructionModal.style.display = "block";
+    instructionModal.style.display = "flex";
 })
 
 credits.addEventListener('click', () => {
     //Opens the modal
-    creditsModal.style.display = "block";
+    creditsModal.style.display = "flex";
 })
 
 closeInstruction.addEventListener('click', () =>{
@@ -90,3 +94,4 @@ window.addEventListener('keyup', e => {
         game.start()
     }
 })
+

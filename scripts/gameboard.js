@@ -104,7 +104,7 @@ let gameboard = {
         console.log('checking')
 
         if(width < 1250 || height < 650){
-            screenModal.style.display = "block";
+            screenModal.style.display = "flex";
         } else {
             screenModal.style.display = "none";
         }
