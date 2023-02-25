@@ -80,10 +80,11 @@ let gameboard = {
 
         this.background.style.background = "url(data:image/svg+xml;base64,"+encoded+")";
         this.background.style.backgroundSize = 'cover'
-    },
+    }, 
     signalHit: function(){
+        // Flashes to boards's border when there's a paddle hit.
         this.board.style.borderColor = 'var(--sand)'
-        setTimeout(() => {this.board.style.borderColor = 'var(--lightPurple)'}, 300)
+        setTimeout(() => {this.board.style.borderColor = 'var(--lightPurple)'}, 200)
     },
     scoreAnimation: function(board){
         // Flashes a scoreboard green when a point is scored or a match ends.
